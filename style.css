@@ -1,0 +1,55 @@
+/* 居中
+内联元素：在父级元素加上text-aligh:center;
+块级元素：margin:auto?
+*/
+/* 
+
+*/
+
+*{margin:0; padding:0 }
+a{text-decoration: none;}
+kbd{
+    border:1px solid red;
+    /* 非到万不得已不要设置宽高 */
+    width: 4em;
+    height: 4em;
+    /* kbd是内联元素，無法產生方:块，使用inline-block */
+    display:inline-block;
+    text-transform: uppercase;
+}
+
+#wrapper div:nth-child(1){
+    
+
+}
+#main1 div:nth-child(2){
+    margin-left:0em;
+}
+
+#main1 div:nth-child(3){
+    margin-left:0em
+}
+
+main{
+    text-align: center;
+}
+
+#main1{
+    display:inline-block;
+}
+
+main kbd{
+    position: relative;
+}
+main kbd>button{
+    /* 父級就要跟著相對定位 */
+    position:absolute;
+    right:0; bottom:0;
+    /*正常狀態下不展示，懸停才出現 */
+    display:none;
+}
+/* 重點！！！：hover写在kbd上，因为是在kbd悬停 */
+main kbd:hover>button{
+    display: inline-block; /*不是block*/
+    
+}
